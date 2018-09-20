@@ -11,7 +11,7 @@ agent any
  
  post {
   always {
-         archive 'dist/*.jar'       
+         archive 'dist/*.jar'
          }
  
        }
