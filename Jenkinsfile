@@ -9,12 +9,6 @@ agent any
                  }
         }
  
- post {
-  always {
-         archive 'dist/*.jar'       
-         }
- 
-       }
  
  
 }
