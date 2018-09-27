@@ -1,3 +1,5 @@
+#!/usr/bin/env froovy
+
 pipeline {
 
  agent any
