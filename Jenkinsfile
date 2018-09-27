@@ -1,4 +1,4 @@
-#!/usr/bin/env froovy
+#!/usr/bin/env groovy
 
 pipeline {
 
