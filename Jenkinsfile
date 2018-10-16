@@ -10,6 +10,14 @@ pipeline {
 
  stages {
 
+ stage('Unit Test') {
+                  steps {
+        sh 'ant -f test.xml -v'
+        junit 'reports/result.xml'
+                }
+         
+}  
+  
  stage('Build') {
                   steps {
         sh 'ant -f build.xml -v'
@@ -17,10 +25,10 @@ pipeline {
          
         }
   
-  stage('Test') {
+  stage('Deploy') {
                   steps {
-        sh 'ant -f test.xml -v'
-        junit 'reports/result.xml'
+                   sh 'cp dist/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/'
+     
                 }
          
 }
