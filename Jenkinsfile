@@ -12,6 +12,15 @@ pipeline {
                 }
          
         }
+  
+  stage('Build') {
+                  steps {
+        sh 'ant -f build.xml -v'
+        junit 'reports/result.xml'
+                }
+         
+}
+  
 }
 
  post { 
