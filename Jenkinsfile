@@ -2,7 +2,7 @@
 
 pipeline {
 
- agent any
+ agent none
  
  environment {
     MAJOR_VERSION = 1
@@ -33,6 +33,16 @@ pipeline {
          
 }
   
+  stage('Running on CentOS') {
+   steps {
+    sh "wget http://const19732.mylabserver.com/rectangles/all/rectangle_${env.MAJOR_VERSION}.jar"
+    sh "java -jar rectangle_${env.MAJOR_VERSION}.jar"
+    
+   }
+   
+   
+  }
+  
 }
 
  post { 
@@ -41,6 +51,3 @@ pipeline {
          }
       }
 }
-                                                                                                                                                                                                       
-                                                                                                                                                                                                            
-                                              
