@@ -43,6 +43,21 @@ pipeline {
    
   }
   
+  
+  stage('Running on Debian') {
+   agent {
+   docker 'openjdk:8u121jre'
+   }
+   steps {
+    sh "wget http://const19732.mylabserver.com/rectangles/all/rectangle_${env.MAJOR_VERSION}.jar"
+    sh "java -jar rectangle_${env.MAJOR_VERSION}.jar 14 15"
+    
+   }
+   
+   
+}
+  
+  
 }
 
  post { 
